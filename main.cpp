@@ -1,8 +1,7 @@
 #include <iostream>
-#include <fstream>
 #include "LogMixer.h"
 
-int main(){
+int main() {
     std::cout << "##### Read the first file #####" << std::endl;
     std::string logName_1;
     std::cin >> logName_1;
