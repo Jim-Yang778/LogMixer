@@ -68,6 +68,8 @@ void LogMixer::compareAndInsertLog(std::string &log1, std::string &log2,
         getline(iLogStr1, tts1, " ");
         getline(iLogStr2, tts2, " ");
     }
+    auto time1 = std::make_shared(tts1);
+    auto time2 = std::make_shared(tts2);
     if ()
     return;
 }

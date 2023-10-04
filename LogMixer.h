@@ -1,16 +1,23 @@
 class LogMixer {
 public:
     class Time {
-    Time (std::string tts) {
-        while (getline(iLogStr1, tts1, ":")) {
-            
-        }
-    }
     public:
+        Time (std::string tts) {
+            std::string timeSplit;
+            getline(tts, timeSplit, ":")
+            hour = atoi(timeSplit.c_str());
+            getline(tts, timeSplit, ":")
+            minute = atoi(timeSplit.c_str());
+            getline(tts, timeSplit, ":")
+            second = atoi(timeSplit.c_str());
+            getline(tts, timeSplit, ":")
+            micro_second = atoll(timeSplit.c_str());
+        }
         uint32_t hour;
         uint32_t minute;
         uint32_t second;
         uint64_t micro_second;
+        static bool compareTime(std::shared_ptr<Time> &t1, std::shared_ptr<Time> &t2);
     };
 public:
     LogMixer() {};
