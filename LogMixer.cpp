@@ -32,11 +32,12 @@ void LogMixer::startMix() {
         if (flag1 && flag2) {
             compareAndInsertLog(logStr1, logStr2, flag1, flag2);
         } else if (flag1 && !flag2) {
-            insertLog(logStr1);
+            insertLog(logStr1, flag1, logFile_1);
         } else if (!flag1 && flag2) {
-            insertLog(logStr2);
+            insertLog(logStr2, flag2, logFile_2);
         }
     }
+    std::cout << COMBINED_LOG << " has been created" << std::endl;
 }
 
 bool LogMixer::readLogFile(std::string &logName, std::ifstream &logFile) {
@@ -54,8 +55,10 @@ bool LogMixer::readLogFile(std::string &logName, std::ifstream &logFile) {
     return true;
 }
 
-void LogMixer::insertLog(std::string &log) {
+void LogMixer::insertLog(std::string &log, bool &flag, std::ifstream &logFile) {
     resLogFile << log;
+    std::getline(logFile, log);
+    flag = log.length() != 0;
 }
 
 void LogMixer::compareAndInsertLog(std::string &log1, std::string &log2,
@@ -65,11 +68,49 @@ void LogMixer::compareAndInsertLog(std::string &log1, std::string &log2,
     std::string tts1;
     std::string tts2;
     for (int i = 0; i < 3; ++i) {
-        getline(iLogStr1, tts1, " ");
-        getline(iLogStr2, tts2, " ");
+        getline(iLogStr1, tts1, ' ');
+        getline(iLogStr2, tts2, ' ');
     }
-    auto time1 = std::make_shared(tts1);
-    auto time2 = std::make_shared(tts2);
-    if ()
+    std::shared_ptr<Time> time1 = std::make_shared<Time>(tts1);
+    std::shared_ptr<Time> time2 = std::make_shared<Time>(tts2);
+    if (Time::compareTime(time1, time2)) {
+        insertLog(log2, flag2, logFile_2);
+    } else {
+        insertLog(log1, flag1, logFile_1);
+    }
     return;
+}
+
+/*
+@Parameter: t1 t2
+Two Times that are going to be compared
+
+@Return
+true: t1 is later than t2 in time 
+      OR
+      t1 is the same as t2
+false: t2 is later than t1 in time
+*/
+bool LogMixer::Time::compareTime(std::shared_ptr<Time> &t1, std::shared_ptr<Time> &t2) {
+    if (t1->hour > t2->hour) {
+        return true;
+    } else if (t1->hour < t2->hour) {
+        return false;
+    }
+    if (t1->minute > t2->minute) {
+        return true;
+    } else if (t1->minute < t2->minute) {
+        return false;
+    }
+    if (t1->second > t2->second) {
+        return true;
+    } else if (t1->second < t2->second) {
+        return false;
+    }
+    if (t1->micro_second > t2->micro_second) {
+        return true;
+    } else if (t1->micro_second < t2->micro_second) {
+        return false;
+    }
+    return true;
 }

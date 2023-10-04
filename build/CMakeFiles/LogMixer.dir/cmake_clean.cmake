@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/LogMixer.dir/LogMixer.cpp.o"
+  "CMakeFiles/LogMixer.dir/LogMixer.cpp.o.d"
   "CMakeFiles/LogMixer.dir/main.cpp.o"
   "CMakeFiles/LogMixer.dir/main.cpp.o.d"
   "LogMixer"

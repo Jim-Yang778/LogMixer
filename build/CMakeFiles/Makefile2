@@ -837,12 +837,12 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/LogMixer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yjy/LogMixer/build/CMakeFiles --progress-num=1,2 "Built target LogMixer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yjy/LogMixer/build/CMakeFiles --progress-num=1,2,3 "Built target LogMixer"
 .PHONY : CMakeFiles/LogMixer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LogMixer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yjy/LogMixer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yjy/LogMixer/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/LogMixer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yjy/LogMixer/build/CMakeFiles 0
 .PHONY : CMakeFiles/LogMixer.dir/rule

@@ -523,6 +523,30 @@ LogMixer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/build
 .PHONY : LogMixer/fast
 
+LogMixer.o: LogMixer.cpp.o
+.PHONY : LogMixer.o
+
+# target to build an object file
+LogMixer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/LogMixer.cpp.o
+.PHONY : LogMixer.cpp.o
+
+LogMixer.i: LogMixer.cpp.i
+.PHONY : LogMixer.i
+
+# target to preprocess a source file
+LogMixer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/LogMixer.cpp.i
+.PHONY : LogMixer.cpp.i
+
+LogMixer.s: LogMixer.cpp.s
+.PHONY : LogMixer.s
+
+# target to generate assembly for a file
+LogMixer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogMixer.dir/build.make CMakeFiles/LogMixer.dir/LogMixer.cpp.s
+.PHONY : LogMixer.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -587,6 +611,9 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... LogMixer"
+	@echo "... LogMixer.o"
+	@echo "... LogMixer.i"
+	@echo "... LogMixer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

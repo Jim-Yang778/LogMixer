@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/yjy/LogMixer/LogMixer.cpp" "CMakeFiles/LogMixer.dir/LogMixer.cpp.o" "gcc" "CMakeFiles/LogMixer.dir/LogMixer.cpp.o.d"
   "/Users/yjy/LogMixer/main.cpp" "CMakeFiles/LogMixer.dir/main.cpp.o" "gcc" "CMakeFiles/LogMixer.dir/main.cpp.o.d"
   )
 
